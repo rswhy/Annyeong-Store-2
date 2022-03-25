@@ -49,6 +49,11 @@
         <label for="email">Address:</label>
         <p><%= data.Profile.address  %> </p>
       </div><br>
+
+      <div class="form-group">
+        <label for="email">Account Created:</label>
+        <p><%=  User.dateFormatEdit(data.createdAt)  %> </p>
+      </div><br>
     
       <div class="form-group">
         <label for="email">Purchased Item:</label>

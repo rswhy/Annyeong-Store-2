@@ -15,6 +15,20 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.Profile, {foreignKey : 'UserId'})
       User.belongsTo(models.Product, {foreignKey : 'ProductId'})
     }
+
+    static dateFormatEdit (dateOfEvent) {
+      let year = dateOfEvent.getFullYear()
+      let month = dateOfEvent.getMonth() + 1
+      let date = dateOfEvent.getDate()
+      if (month.toString().length === 1) {
+        month = `0${month}`
+      }
+      if (date.toString().length === 1) {
+        date = `0${date}`
+      }
+  
+      return `${year}-${month}-${date}`
+    }
   }
   User.init({
     userName: {
