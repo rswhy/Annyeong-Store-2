@@ -3,6 +3,7 @@ const { Op } = require('sequelize')
 const bcrypt = require('bcryptjs') 
 const formatDate = require('../helpers/formatDate')
 const nodemailer = require('nodemailer')
+const dateFormatEdit = require('../models/index')
 
 class Controller {
 
@@ -18,7 +19,6 @@ class Controller {
 
     let temp = []
    
-
     if (keyword) {
       temp.push(`search=${keyword}`)
     } 
@@ -45,7 +45,7 @@ class Controller {
       const filterTemp = temp.filter(el => el.includes('category'))
       console.log(filterTemp.length )
       if (filterTemp.length > 0) {
-        console.log('masokkkkkkkkkk')
+
         temp = []
         temp.push(`category=${sortCategory}`)
       } else {
@@ -270,7 +270,7 @@ class Controller {
     })
     .then(data => {
       console.log(data)
-      res.render("accountDetail", {data})
+      res.render("accountDetail", {User, data, dateFormatEdit})
     })
     .catch(err => {
       res.send(err)
@@ -286,7 +286,7 @@ class Controller {
       }
     })
     .then(() => {
-      User.destroy({
+      return User.destroy({
         where : {
           id: userId
         }
