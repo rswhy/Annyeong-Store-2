@@ -1,10 +1,11 @@
 {
   "name": "pair-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pair Project Debby Ria dan Ratih Sanjaya Wahyuningrum",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node app.js"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +18,16 @@
     "nodemailer": "^6.7.3",
     "pg": "^8.7.3",
     "sequelize": "^6.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rswhy/Annyeong-Store-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rswhy/Annyeong-Store-2/issues"
+  },
+  "homepage": "https://github.com/rswhy/Annyeong-Store-2#readme",
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
   }
 }
